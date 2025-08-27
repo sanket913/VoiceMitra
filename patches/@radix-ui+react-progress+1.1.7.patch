@@ -1,0 +1,27 @@
+diff --git a/node_modules/@radix-ui/react-progress/dist/index.js b/node_modules/@radix-ui/react-progress/dist/index.js
+index ea48de0..a93042a 100644
+--- a/node_modules/@radix-ui/react-progress/dist/index.js
++++ b/node_modules/@radix-ui/react-progress/dist/index.js
+@@ -121,13 +121,16 @@ function getInvalidMaxError(propValue, componentName) {
+   return `Invalid prop \`max\` of value \`${propValue}\` supplied to \`${componentName}\`. Only numbers greater than 0 are valid max values. Defaulting to \`${DEFAULT_MAX}\`.`;
+ }
+ function getInvalidValueError(propValue, componentName) {
+-  return `Invalid prop \`value\` of value \`${propValue}\` supplied to \`${componentName}\`. The \`value\` prop must be:
+-  - a positive number
+-  - less than the value passed to \`max\` (or ${DEFAULT_MAX} if no \`max\` prop is set)
+-  - \`null\` or \`undefined\` if the progress is indeterminate.
+-
+-Defaulting to \`null\`.`;
++  return (
++    "Invalid prop `value` of value `" + propValue + "` supplied to `" + componentName + "`. " +
++    "The `value` prop must be: " +
++    "- a positive number " +
++    "- less than the value passed to `max` (or " + DEFAULT_MAX + " if no `max` prop is set) " +
++    "- `null` or `undefined` if the progress is indeterminate. " +
++    "Defaulting to `null`."
++  );
+ }
++
+ var Root = Progress;
+ var Indicator = ProgressIndicator;
+ //# sourceMappingURL=index.js.map
